@@ -1,3 +1,9 @@
+# revision 23089
+# category TLCore
+# catalog-ctan /systems/knuth/dist/mfware
+# catalog-date 2011-04-11 12:30:24 +0200
+# catalog-license knuth
+# catalog-version undef
 Name:		texlive-mfware
 Version:	20110411
 Release:	1
@@ -53,6 +59,7 @@ A collection of programs for processing the output of Metafont.
 %doc %{_texmfdir}/doc/man/man1/pktogf.man1.pdf
 %doc %{_mandir}/man1/pktype.1*
 %doc %{_texmfdir}/doc/man/man1/pktype.man1.pdf
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -65,3 +72,5 @@ mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf texmf-dist %{buildroot}%{_datadir}
 mkdir -p %{buildroot}%{_mandir}/man1
 mv %{buildroot}%{_texmfdir}/doc/man/man1/*.1 %{buildroot}%{_mandir}/man1
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
