@@ -1,4 +1,4 @@
-# revision 23089
+# revision 26689
 # category TLCore
 # catalog-ctan /systems/knuth/dist/mfware
 # catalog-date 2011-04-11 12:30:24 +0200
@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-mfware
 Version:	20110411
-Release:	2
+Release:	3
 Summary:	Supporting tools for use with Metafont
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/systems/knuth/dist/mfware
