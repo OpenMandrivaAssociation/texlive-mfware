@@ -1,12 +1,12 @@
-# revision 26689
+# revision 29764
 # category TLCore
 # catalog-ctan /systems/knuth/dist/mfware
-# catalog-date 2011-04-11 12:30:24 +0200
+# catalog-date 2012-06-24 11:08:44 +0200
 # catalog-license knuth
 # catalog-version undef
 Name:		texlive-mfware
-Version:	20110411
-Release:	3
+Version:	20120624
+Release:	1
 Summary:	Supporting tools for use with Metafont
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/systems/knuth/dist/mfware
@@ -20,7 +20,8 @@ Requires(post):	texlive-kpathsea
 Requires:	texlive-mfware.bin
 
 %description
-A collection of programs for processing the output of Metafont.
+A collection of programs (as web source) for processing the
+output of Metafont.
 
 %post
     %{_sbindir}/texlive.post
@@ -39,17 +40,17 @@ A collection of programs for processing the output of Metafont.
 %{_texmfdistdir}/mft/base/pl.mft
 %{_texmfdistdir}/mft/base/plain.mft
 %doc %{_mandir}/man1/gftodvi.1*
-%doc %{_texmfdir}/doc/man/man1/gftodvi.man1.pdf
+%doc %{_texmfdistdir}/doc/man/man1/gftodvi.man1.pdf
 %doc %{_mandir}/man1/gftopk.1*
-%doc %{_texmfdir}/doc/man/man1/gftopk.man1.pdf
+%doc %{_texmfdistdir}/doc/man/man1/gftopk.man1.pdf
 %doc %{_mandir}/man1/gftype.1*
-%doc %{_texmfdir}/doc/man/man1/gftype.man1.pdf
+%doc %{_texmfdistdir}/doc/man/man1/gftype.man1.pdf
 %doc %{_mandir}/man1/mft.1*
-%doc %{_texmfdir}/doc/man/man1/mft.man1.pdf
+%doc %{_texmfdistdir}/doc/man/man1/mft.man1.pdf
 %doc %{_mandir}/man1/pktogf.1*
-%doc %{_texmfdir}/doc/man/man1/pktogf.man1.pdf
+%doc %{_texmfdistdir}/doc/man/man1/pktogf.man1.pdf
 %doc %{_mandir}/man1/pktype.1*
-%doc %{_texmfdir}/doc/man/man1/pktype.man1.pdf
+%doc %{_texmfdistdir}/doc/man/man1/pktype.man1.pdf
 
 #-----------------------------------------------------------------------
 %prep
@@ -59,24 +60,6 @@ A collection of programs for processing the output of Metafont.
 
 %install
 mkdir -p %{buildroot}%{_datadir}
-cp -fpar texmf texmf-dist %{buildroot}%{_datadir}
+cp -fpar texmf-dist %{buildroot}%{_datadir}
 mkdir -p %{buildroot}%{_mandir}/man1
-mv %{buildroot}%{_texmfdir}/doc/man/man1/*.1 %{buildroot}%{_mandir}/man1
-
-
-%changelog
-* Wed Aug 08 2012 Paulo Andrade <pcpa@mandriva.com.br> 20110411-3
-+ Revision: 812586
-- Update to latest release.
-
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 20110411-2
-+ Revision: 753977
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20110411-1
-+ Revision: 719014
-- texlive-mfware
-- texlive-mfware
-- texlive-mfware
-- texlive-mfware
-
+mv %{buildroot}%{_texmfdistdir}/doc/man/man1/*.1 %{buildroot}%{_mandir}/man1
