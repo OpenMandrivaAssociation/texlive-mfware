@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-mfware
 Version:	20120624
-Release:	2
+Release:	3
 Summary:	Supporting tools for use with Metafont
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/systems/knuth/dist/mfware
