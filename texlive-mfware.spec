@@ -1,12 +1,6 @@
-# revision 33736
-# category TLCore
-# catalog-ctan /systems/knuth/dist/mfware
-# catalog-date 2014-02-26 23:03:13 +0100
-# catalog-license knuth
-# catalog-version undef
 Name:		texlive-mfware
-Version:	20140226
-Release:	4
+Version:	20170504
+Release:	1
 Summary:	Supporting tools for use with Metafont
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/systems/knuth/dist/mfware
@@ -33,11 +27,7 @@ output of Metafont.
 
 #-----------------------------------------------------------------------
 %files
-%{_texmfdistdir}/mft/base/README
-%{_texmfdistdir}/mft/base/cmbase.mft
-%{_texmfdistdir}/mft/base/mplain.mft
-%{_texmfdistdir}/mft/base/pl.mft
-%{_texmfdistdir}/mft/base/plain.mft
+%{_texmfdistdir}/mft/base
 %doc %{_mandir}/man1/gftodvi.1*
 %doc %{_texmfdistdir}/doc/man/man1/gftodvi.man1.pdf
 %doc %{_mandir}/man1/gftopk.1*
