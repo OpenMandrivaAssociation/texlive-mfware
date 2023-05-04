@@ -1,6 +1,6 @@
 Name:		texlive-mfware
-Version:	62387
-Release:	2
+Version:	66186
+Release:	1
 Summary:	Supporting tools for use with Metafont
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/systems/knuth/dist/mfware
