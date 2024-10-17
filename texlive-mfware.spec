@@ -3,7 +3,7 @@ Version:	70015
 Release:	1
 Summary:	Supporting tools for use with Metafont
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/systems/knuth/dist/mfware
+URL:		https://www.ctan.org/tex-archive/systems/knuth/dist/mfware
 License:	KNUTH
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mfware.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mfware.doc.r%{version}.tar.xz
