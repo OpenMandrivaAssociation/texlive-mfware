@@ -1,5 +1,5 @@
 Name:		texlive-mfware
-Version:	73848
+Version:	76790
 Release:	1
 Summary:	Supporting tools for use with Metafont
 Group:		Publishing
