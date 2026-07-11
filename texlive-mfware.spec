@@ -1,54 +1,23 @@
-Name:		texlive-mfware
-Version:	77677
+%global tl_name mfware
+%global tl_revision 77830
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
 Release:	1
-Summary:	Supporting tools for use with Metafont
+Summary:	Supporting tools for Metafont: gftodvi, gftopk, gftype, mft
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/systems/knuth/dist/mfware
-License:	KNUTH
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mfware.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mfware.doc.r%{version}.tar.xz
+License:	pd
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/mfware.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/mfware.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
-Requires:	texlive-mfware.bin
+BuildSystem:	texlive
+Requires:	texlive(mfware.bin)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-A collection of programs (as web source) for processing the
-output of Metafont.
+A collection of programs (as web source) for processing the output of
+Metafont. They include: gftodvi (for making proof sheets of letters);
+gftopk (translate gf bitmap files to pk bitmaps); gftype (human-readable
+dump of gf files); mft (prettyprint Metafont source).
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/mft/base
-%doc %{_mandir}/man1/gftodvi.1*
-%doc %{_texmfdistdir}/doc/man/man1/gftodvi.man1.pdf
-%doc %{_mandir}/man1/gftopk.1*
-%doc %{_texmfdistdir}/doc/man/man1/gftopk.man1.pdf
-%doc %{_mandir}/man1/gftype.1*
-%doc %{_texmfdistdir}/doc/man/man1/gftype.man1.pdf
-%doc %{_mandir}/man1/mft.1*
-%doc %{_texmfdistdir}/doc/man/man1/mft.man1.pdf
-%doc %{_mandir}/man1/pktogf.1*
-%doc %{_texmfdistdir}/doc/man/man1/pktogf.man1.pdf
-%doc %{_mandir}/man1/pktype.1*
-%doc %{_texmfdistdir}/doc/man/man1/pktype.man1.pdf
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_datadir}
-cp -fpar texmf-dist %{buildroot}%{_datadir}
-mkdir -p %{buildroot}%{_mandir}/man1
-mv %{buildroot}%{_texmfdistdir}/doc/man/man1/*.1 %{buildroot}%{_mandir}/man1
